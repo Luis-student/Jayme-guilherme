@@ -6,7 +6,7 @@ banco = mysql.connector.connect(
     port= 3306,
     user= "root",
     password= "Jayme-123",
-    database= "jayme_guilherme"
+    database= "Jayme_guilherme"
 
 )
 
@@ -14,10 +14,16 @@ banco = mysql.connector.connect(
 cursor = banco.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS jayme_guilherme")
 
-cursor = banco.cursor()
-cursor.execute("CREATE TABLE IF NOT EXISTS usuario (id INT PRIMARY KEY, username VARCHAR(255), email VARCHAR(250), senha VARCHAR(100), idade INT)")
 
-
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    email VARCHAR(250),
+    senha VARCHAR(100),
+    idade INT
+)
+""")
 #inserrção de dados do usuario 
 
 def cadastro():
