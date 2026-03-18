@@ -1,1 +1,10 @@
-print ("HELLO WORLD")
+import mysql.connector 
+
+conexão = mysql.connector.connect(
+    host= "localhost",
+    port= 3306,
+    user= "root",
+    password= "Jayme-123"
+
+)
+
